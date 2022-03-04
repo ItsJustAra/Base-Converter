@@ -1,0 +1,2174 @@
+#include <stdio.h>
+#include <math.h>
+
+
+//Secondery function for the IEEE system
+
+void  ConvertDecimalnumIn_IEEE(long int decimalnum)
+{
+	long int rest[16] ;
+	int index , index1 ;
+	int exp_reel = 0 ;
+	
+	
+	
+	if( decimalnum > 0)
+	{
+	
+	while( decimalnum != 0)
+	{
+		rest[index] = decimalnum % 2 ;
+		
+		++index;
+		
+		decimalnum = decimalnum / 2 ;
+	}
+	
+	for( index = 15 ;index >= 0 ; --index)
+	{
+		if( rest[index] < 0 || rest[index] > 1)
+		
+	     continue;
+		
+		if(rest[index] == 1)
+		{
+			printf("\033[0;32m"); //Set the text to the color yellow
+			
+		printf("\n%ld,",rest[index]);
+		break;
+			
+		}
+		
+		rest[index1] == rest[index];
+		++index1;
+	
+	}
+	
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		++exp_reel;
+	}
+	
+	printf(" x 2^%d\n\n",exp_reel);
+	
+	int calage ;
+	long int exp,expIndex, expRem[16] ;
+	int k;
+	int zeros;
+	
+	printf("\033[0;36m"); //Set the text to the color cyan
+	
+	printf("What is the ExpSize : ");
+	scanf("%d",&k);
+	
+	printf("\n");
+	
+	if( k == 4)
+	{
+		calage = 7 ;
+		
+		exp = exp_reel + calage ;
+		
+		printf("\033[0;33m"); //Set the text to the color yellow
+		
+		printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		
+	
+	printf("\033[0;31m"); //Set the text to the color red
+	
+	for(int x = 0 ;x < 21;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("\033[0;31m"); //Set the text to the color yellow
+	
+	printf("|0|");
+	
+	for(expIndex = 3 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 11 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 21;++x)
+	{
+		printf("_");
+	}
+		
+	}
+	
+	
+	else if( k == 8)
+	{
+		calage = 127 ;
+		
+		exp = exp_reel + calage ;
+		
+		printf("\033[0;33m"); //Set the text to the color yellow
+		
+		printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		
+	printf("\033[0;31m"); //Set the text to the color red
+	
+	
+	for(int x = 0 ;x < 37;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("\033[0;31m"); //Set the text to the color yellow
+	
+	printf("|0|");
+	
+	for(expIndex = 7 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 23 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 37;++x)
+	{
+		printf("_");
+	}
+	
+	}
+	
+	else if( k == 11)
+	{
+	    calage = 1023 ;
+	    
+	    exp = exp_reel + calage ;
+	    
+	    printf("\033[0;33m"); //Set the text to the color yellow
+	    
+	    printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		printf("\033[0;31m"); //Set the text to the color red
+	
+	
+	
+	for(int x = 0 ;x < 52;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("\033[0;31m"); //Set the text to the color yellow
+	
+	printf("|0|");
+	
+	for(expIndex = 10 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 52 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 52;++x)
+	{
+		printf("_");
+	}
+	
+	}
+	
+}
+
+
+
+else if( decimalnum < 0)
+{
+	decimalnum = decimalnum * (-1) ;
+	
+	while( decimalnum != 0)
+	{
+		rest[index] = decimalnum % 2 ;
+		
+		++index;
+		
+		decimalnum = decimalnum / 2 ;
+	}
+	
+	for( index = 15 ;index >= 0 ; --index)
+	{
+		if( rest[index] < 0 || rest[index] > 1)
+		
+	     continue;
+		
+		if(rest[index] == 1)
+		{
+			printf("\033[0;32m"); //Set the text to the color yellow
+			
+		printf("\n%ld,",rest[index]);
+		break;
+			
+		}
+		
+		rest[index1] == rest[index];
+		++index1;
+	
+	}
+	
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		++exp_reel;
+	}
+	
+	printf(" x 2^%d\n\n",exp_reel);
+	
+	int calage ;
+	long int exp,expIndex, expRem[16] ;;
+	int k;
+	int zeros;
+	
+	printf("\033[0;36m"); //Set the text to the color cyan
+	
+	printf("What is the ExpSize : ");
+	scanf("%d",&k);
+	
+	printf("\n");
+	
+	if( k == 4)
+	{
+		calage = 7 ;
+		
+		exp = exp_reel + calage ;
+		
+		printf("\033[0;33m"); //Set the text to the color yellow
+		
+		printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		
+	
+	
+	
+	for(int x = 0 ;x < 21;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("|1|");
+	
+	for(expIndex = 3 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 11 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 21;++x)
+	{
+		printf("_");
+	}
+		
+	}
+	
+	
+	else if( k == 8)
+	{
+		calage = 127 ;
+		
+		exp = exp_reel + calage ;
+		
+		printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		
+	
+	
+	
+	for(int x = 0 ;x < 37;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("|0|");
+	
+	for(expIndex = 7 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 23 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 37;++x)
+	{
+		printf("_");
+	}
+	
+	}
+	
+	else if( k == 11)
+	{
+	    calage = 1023 ;
+	    
+	    exp = exp_reel + calage ;
+	    
+	    printf("The decimal's Exp is : %ld\n\n",exp);
+		
+		while( exp != 0)
+		{
+			expRem[expIndex] = exp % 2 ;
+			
+			++expIndex ;
+			
+			exp = exp / 2 ;
+		}
+		
+		
+	printf("\033[0;31m"); //Set the text to the color red
+	
+	
+	for(int x = 0 ;x < 52;++x)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	printf("|1|");
+	
+	for(expIndex = 10 ;expIndex >= 0 ; --expIndex)
+	{
+		if( expRem[expIndex] == 0 || expRem[expIndex] == 1)
+		
+		printf("%ld",expRem[expIndex]);
+		
+	}
+	
+	printf("|");
+	
+	for(index1 = 0 ; index1 < index ;++index1)
+	{
+		
+		printf("%ld",rest[index1]);
+		
+	}
+	
+	zeros = 52 - exp_reel ;
+	for(int o=0;o<=zeros;++o)
+	{
+		printf("0");
+	}
+	
+	printf("|");
+	printf("\n");
+	for(int x = 0 ;x < 52;++x)
+	{
+		printf("_");
+	}
+	
+	}
+}
+
+
+}
+
+
+//Main function
+
+
+int main (void)
+{
+	//convert
+	
+	long  int decimalnum,rest[16];
+    int base;
+	int index;
+	
+	//deconvert
+	
+	long int binary;
+	long int rem[16];
+	int indexReturn;
+	int sum ;
+	int power ;
+	
+	printf("\033[0;37m"); //Set the text to the color red.
+	
+	printf("      ");
+	
+	for(int i=0;i<40;++i)
+	{
+		printf("_");
+	}
+	
+	
+	printf("\n\n");
+	
+	for(int x=0;x<12;++x)
+	{
+		printf(" ");
+	}
+	
+	printf("Welcome to the base converter\n");
+	
+	
+	for(int x=0;x<23;++x)
+	{
+		printf(" ");
+	}
+	
+	printf("V6.0.0");
+	
+	printf("\n\n");
+	
+	for(int y=0;y<52;++y)
+	{
+		printf("*");
+	}
+	
+	printf("    \t");
+	
+	for(int i=0;i<35;++i)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n");
+	
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("1)_ Convert from decimal to binary  ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("2)_ Convert from decimal to BinarySegnifie  ");
+	
+	printf("\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("3)_ Convert from decimal to Octal  ");
+	
+	printf("\n\n");
+	
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("4)_ Convert from decimal to Hexadecimal ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("5)_ Convert from decimal to BCD ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("6)_ Convert from decimal to XS3 ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("7)_ Convert from decimal to CA1 and CA2  ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("8)_ Convert from decimal to Code Gray  ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("9)_ Convert from decimal to IEEE system  ");
+	
+	printf("\n\n");
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	
+	printf("10)_ Convert from BinaryCode back  to decimalnum ");
+	
+	printf("\n\n");
+	
+	
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("11)_ Convert from OctalCode back  to decimalnum ");
+	
+	printf("\n\n");
+	
+	
+	
+	for(int r=0;r<10;++r)
+	{
+		printf(" ");
+	}
+	
+	printf("12)_ Convert from HexadecimallCode back  to decimalnum //Still under Building) ");
+	
+	
+	printf("    \t");
+	
+	
+	printf("\n\n");
+	
+	printf("    \t");
+	
+	for(int i=0;i<35;++i)
+	{
+		printf("_");
+	}
+	
+	printf("\n\n\n");
+	
+	for(int y=0;y<52;++y)
+	{
+		printf("*");
+	}
+	
+	printf("\n\n");
+	
+	printf("Enter the base that you want to convert to  : ");
+	scanf("%i",&base);
+	
+	printf("\n\n");
+	
+	if( base == 1) // Binary base
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to binary base %");
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	printf("First Way : \n");
+		
+		printf(" devide %ld by 2 till the diviser equals zero, than pick them up from the last operation till the first one ",decimalnum);
+		
+	printf("Second way : \n");
+		
+		printf(" %ld mins  pow(2,n) which is higher smaller value till it becomes zero then type the numbers that you used (1) and the ones that you didnt (0) ",decimalnum);
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf("The binary code of the given number is :  ");
+		
+		if( decimalnum == 0)
+		{
+			printf("0");
+		}
+		
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		for(index = 15;index>=0;--index)
+		{
+			if( rest[index] > 1 ||rest[index] < 0)
+			
+			continue;
+			
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			printf("%ld",rest[index]);
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		
+		printf(" Credits : Walid Araar");
+		
+	}
+	
+	//Binary Segnifie
+	
+	else if( base == 2)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to binarySegnifie base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	printf("First Way : \n");
+		
+		printf(" devide %ld by 2 till the diviser equals zero, than pick them up from the last operation till the first one. and add in left 0 if its positive if not then 1 ",decimalnum);
+		
+	printf("Second way : \n");
+		
+		printf(" %ld mins  pow(2,n) which is higher smaller value till it becomes zero then type the numbers that you used (1) and the ones that you didnt (0) ",decimalnum);
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		
+		
+		
+			if( decimalnum == 0)
+		{
+			printf("The binary code of the given number is :  ");
+			
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			printf("0");
+			
+			printf("\n\n");
+			
+		printf("\033[0;33m"); //Set the text to the color red.
+			
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		
+		}
+		
+		
+		
+		if(decimalnum>0) // positive
+		{
+		printf("The binary code of the given number is :  ");
+			printf("0\t");
+		
+		
+			
+			
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		for(index = index - 1;index>=0;--index)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			printf("%ld",rest[index]);
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		
+		printf(" Credits : Walid Araar");
+		
+	}
+	
+	else if(decimalnum<0) // negative
+	{
+		decimalnum = decimalnum * (-1);
+		printf("The binary code of the given number is :  ");
+		printf("1\t");
+		
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		for(index = index - 1;index>=0;--index)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			if( rest[index] == 0)
+			    {
+			    	printf("1");
+			    }
+			    
+			    else
+			    {
+			    	printf("0");
+			    }
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		
+		printf(" Credits : Walid Araar");
+	}
+	
+	}
+	
+	//octal base
+	
+	else if( base == 3)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to octal base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	printf("First Way : \n");
+		
+		printf(" devide %ld by 8 till the diviser equals zero, than pick them up from the last operation till the first one ",decimalnum);
+	
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf("The binary code of the given number is :  ");
+		
+			if( decimalnum == 0)
+		{
+			printf("0");
+		}
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 8 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 8 ;
+			
+		}
+		
+		for(index = index - 1;index>=0;--index)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			printf("%ld",rest[index]);
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		
+		printf(" Credits : Walid Araar");
+	
+	
+	}
+	
+	//Hexadecimal base
+	
+	else if( base == 4)
+	{
+		
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to  hexadecimal base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	
+		
+		printf(" devide %ld by 16 till the diviser equals zero, than pick them up from the last operation till the first one ",decimalnum);
+	
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf("The binary code of the given number is :  ");
+		
+			if( decimalnum == 0)
+		{
+			printf("0");
+		}
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 16 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 16 ;
+			
+		}
+		
+		for(index = index - 1;index>=0;--index)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			switch(rest[index])
+			{
+				case 10:
+				printf("A");
+				break;
+				
+				case 11:
+				printf("B");
+				break;
+				
+				case 12:
+				printf("C");
+				break;
+				
+				case 13:
+				printf("D");
+				break;
+				
+				case 14:
+				printf("E");
+				break;
+				
+				case 15:
+				printf("F");
+				break;
+				
+				default:
+				printf("%ld",rest[index]);
+				break;
+			}
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar && Yasser");
+	
+	
+	}
+	
+	//BCD base
+	
+	else if(base == 5)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to  BCD base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	
+		
+		printf(" put each number alone  and convert each  them into binary code ",decimalnum);
+	
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf(" The BCD code of the given number : ");
+		
+			if( decimalnum == 0)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			printf("0");
+		}
+		
+		while( decimalnum != 0)
+		{
+			rest[index] = decimalnum % 10 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 10 ;
+			
+		}
+		
+		for(index = index - 1;index >= 0 ;--index)
+		{
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			if(rest[index] == 1)
+			{
+				printf("0001 ");
+			}
+			
+			else if(rest[index] == 2)
+			{
+				printf("0010 ");
+			}
+			
+			else if(rest[index] == 3)
+			{
+				printf("0011 ");
+			}
+			
+			else if(rest[index] == 4)
+			{
+				printf("0100 ");
+			}
+			
+			else if(rest[index] == 5)
+			{
+				printf("0101 ");
+			}
+			
+			else if(rest[index] == 6)
+			{
+				printf("0110 ");
+			}
+			
+			else if(rest[index] == 7)
+			{
+				printf("0111 ");
+			}
+			
+			else if(rest[index] == 8)
+			{
+				printf("1000 ");
+			}
+			
+			else if(rest[index] == 9)
+			{
+				printf("1001 ");
+			}
+			
+			
+			else
+			{
+				printf("0000 ");
+			}
+			
+			
+			
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+	}
+	
+	//XS3 base
+	
+	else if( base == 6 )
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to  xs3 base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	
+		
+		printf(" put each number alone  and add 3 to both of them and  convert each  them into binary code ",decimalnum);
+	
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf("the XS3 of the given number : ");
+		
+			if( decimalnum == 0)
+		{
+			printf("0");
+		}
+		
+		while( decimalnum != 0)
+		{
+			rest[index] = decimalnum % 10 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 10 ;
+			
+		}
+		
+		for(index = index - 1;index >= 0 ;--index)
+		{
+			
+			printf("\033[0;32m"); //Set the text to the color red.
+			
+			rest[index] = rest[index] + 3 ;
+			
+			if(rest[index] == 1)
+			{
+				printf("0001 ");
+			}
+			
+			else if(rest[index] == 2)
+			{
+				printf("0010 ");
+			}
+			
+			else if(rest[index] == 3)
+			{
+				printf("0011 ");
+			}
+			
+			else if(rest[index] == 4)
+			{
+				printf("0100 ");
+			}
+			
+			else if(rest[index] == 5)
+			{
+				printf("0101 ");
+			}
+			
+			else if(rest[index] == 6)
+			{
+				printf("0110 ");
+			}
+			
+			else if(rest[index] == 7)
+			{
+				printf("0111 ");
+			}
+			
+			else if(rest[index] == 8)
+			{
+				printf("1000 ");
+			}
+			
+			else if(rest[index] == 9)
+			{
+				printf("1001 ");
+			}
+			
+			else if(rest[index] == 10)
+			{
+				printf("1010 ");
+			}
+			
+			else if(rest[index] == 11)
+			{
+				printf("1011 ");
+			}
+			
+			else if(rest[index] == 12)
+			{
+				printf("1100 ");
+			}
+			
+			else if(rest[index] == 13)
+			{
+				printf("1101 ");
+			}
+			
+			else if(rest[index] == 14)
+			{
+				printf("1110 ");
+			}
+			
+			else if(rest[index] == 15)
+			{
+				printf("1111 ");
+			}
+			
+			
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		
+		printf(" Credits : Walid Araar");
+	}
+	
+	//CA1|CA2 base
+	
+	else if( base == 7)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to CA1 | CA2 base %");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	printf("First Way : \n");
+		
+		printf(" devide %ld by 2 till the diviser equals zero, than pick them up from the last operation till the first one. and add in left 0 if its positive if not then 1 ",decimalnum);
+		
+	printf("Second way : \n");
+		
+		printf(" %ld mins  pow(2,n) which is higher smaller value till it becomes zero then type the numbers that you used (1) and the ones that you didnt (0) , \n ",decimalnum);
+		
+		printf("if the number [ decimalnum ] is positive then BS = CA1 = CA2");
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		
+			
+		
+		if( decimalnum > 0)
+		{
+			
+		
+		printf("The CA1|CA2 code of the given number is :  ");
+			printf("0\t");
+			
+			// CA1-CA2 positive
+		
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		
+		
+		for(index = index - 1;index>=0;--index)
+		{
+		
+				printf("\033[0;32m"); //Set the text to the color red.
+				
+				printf("%ld",rest[index]);
+				
+			
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		}
+		
+		// CA1-CA2 negative
+		
+		else if( decimalnum < 0)
+		{
+			decimalnum = decimalnum * (-1);
+			
+		printf("The CA1 code of the given number is :  ");
+		printf("1\t");
+		
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		for(index = index - 1;index>=0;--index)
+		{
+			
+			if( rest[index] == 0)
+			    {
+			    	rest[index] = 1;
+			    	printf("%ld",rest[index]);
+			    }
+			    
+			    else if( rest[index] == 1 )
+			    {
+			    	rest[index] = 0;
+			    	
+			    	printf("%ld",rest[index]);
+			    }
+			    
+			    
+		}
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		printf("\n\n");
+		
+		printf("The CA2 code of the given number is :  ");
+		printf("1\t");
+		
+		rest[0] = rest[0] + 1 ;
+		
+		if( rest[0] == 2 )
+		{
+			rest[0] = 0 ;
+			
+			printf("%ld",rest[0]);
+			
+			for(index = 1 ;index < 16 ; ++index)
+			{
+				if( rest[index] == 1)
+				{
+					rest[index] = 0 ;
+					printf("%ld",rest[index]);
+				}
+				
+				else if( rest[index] == 0)
+				{
+					rest[index] = 1 ;
+					printf("%ld",rest[index]);
+					continue;
+					
+				}
+				
+				
+			}
+			
+			
+			
+	    
+		}
+		
+		
+		else if( rest[0] == 1)
+		{
+			
+			
+			for(index= 15; index>= 0;--index)
+			{
+				if( rest[index] == 1 || rest[index] == 0 )
+				
+				
+				printf("%ld",rest[index]);
+			}
+			
+			
+		}
+		
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		
+		}
+		
+		
+	}
+	
+	//Gray code
+	
+	else if( base == 8)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting to Gray base %");
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color red.
+		
+		printf("Enter a decimal number : ");
+		scanf("%ld",&decimalnum);
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o-o");
+		}
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+	printf("First Way : \n");
+		
+		printf(" devide %ld by 2 till the diviser equals zero, than pick them up from the last operation till the first one ",decimalnum);
+		
+	printf("Second way : \n");
+		
+		printf(" %ld mins  pow(2,n) which is higher smaller value till it becomes zero then type the numbers that you used (1) and the ones that you didnt (0) ",decimalnum);
+		
+		printf("\n");
+		
+		printf("print  the last binary charecter and then go back to the online if tye last charecter equals the previews charecter print 0 if else then print one and jump to a other one charecter till you get the binary code in the end ");
+		
+		
+		
+		printf("\n\n");
+		for(int s=0;s<52;++s)
+		{
+			printf("*");
+		}
+		printf("\n");
+		
+		printf("The gray code of the given number is :  ");
+		
+			if( decimalnum == 0)
+		{
+			printf("0");
+		}
+		
+		
+		while(decimalnum != 0)
+		{
+			rest[index] = decimalnum % 2 ;
+			
+			++index;
+			
+			decimalnum = decimalnum / 2 ;
+			
+		}
+		
+		
+		
+		printf("\033[0;32m"); //Set the text to the color red.
+		
+		
+		long int counter;
+	
+	
+	
+	
+	for(index = 15 ;index >= 1;--index)
+	{
+		counter = 0;
+		counter = rest[index] + rest[index-1];
+		
+		if(counter == 0)
+		{
+			printf("%ld",counter);
+		}
+		
+		else if( counter == 1)
+		{
+			printf("%ld",counter);
+		}
+		
+		else
+		{
+			counter = counter % 2 ;
+			printf("%ld",counter);
+		}
+	}
+		
+	
+	
+		
+	
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		
+		for(int o = 0;o<52;++o)
+		{
+			printf("*");
+		}
+		
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		
+	}
+	
+	
+	else if( base == 9 )
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting into IEEE system %");
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color cyan
+		
+		
+	
+	printf("Enter a decimalnum : ");
+	scanf("%ld",&decimalnum);
+	
+	printf("\033[0;33m"); //Set the text to the color yellow
+	
+	printf("The sientific writing of the binary code : ");
+		
+	ConvertDecimalnumIn_IEEE(decimalnum);
+	
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		printf("\n\n");
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+	
+	return 0;
+		
+	}
+	
+	else if( base == 10)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting back from binay into decimal base %");
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color cyan
+		
+		
+	
+	printf("Enter a binaryCode : ");
+	scanf("%ld",&binary);
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf(" take the numbers ones in this number %ld and mark their position and then do the next  number x 2 ^ position then calculate the sum \n\n",binary);
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		while( binary != 0 )
+	{
+		rem[indexReturn] = binary % 10 ;
+		
+		++indexReturn;
+		
+		binary = binary / 10 ;
+		
+	}
+	
+	power = 0 ;
+	sum = 0 ;
+	
+	for(indexReturn = 0 ;indexReturn < 16; ++indexReturn)
+	{
+		if( rem[indexReturn] > 1  || rem[indexReturn] < 0 )
+		
+		continue;
+		
+		power = pow(2,indexReturn) ;
+		
+		
+		
+		sum = sum + (rem[indexReturn] * power) ;
+		
+	}
+	
+	printf("\033[0;36m"); //Set the text to the color red.
+	
+	printf("the decimal number of the given code : ");
+	
+	printf("\033[0;32m"); //Set the text to the color red.
+	
+	printf("%d",sum);
+	
+	printf("\n\n");
+	
+	
+	printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+	
+	printf("\n\n");
+		
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		printf("\n\n");
+		
+	}
+	
+	else if( base == 11)
+	{
+		printf("\033[0;31m"); //Set the text to the color red.
+		
+		printf("converting back from octal into decimal base %");
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf("\033[0;36m"); //Set the text to the color cyan
+		
+		
+	
+	printf("Enter a OctalCode : ");
+	scanf("%ld",&binary);
+		
+		printf("\n\n");
+		
+		printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		printf(" take the numbers ones in this number %ld and mark their position and then do the next  number x 8 ^ position then calculate the sum \n\n",binary);
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+		
+		printf("\n\n");
+		
+		while( binary != 0 )
+	{
+		rem[indexReturn] = binary % 10 ;
+		
+		++indexReturn;
+		
+		binary = binary / 10 ;
+		
+	}
+	power = 0 ;
+	sum = 0 ;
+	
+	for(indexReturn = 0 ;indexReturn < 16; ++indexReturn)
+	{
+		if( rem[indexReturn] > 1  || rem[indexReturn] < 0 )
+		
+		continue;
+		
+		power = pow(8,indexReturn) ;
+		
+		
+		
+		sum = sum + (rem[indexReturn] * power) ;
+		
+	}
+	
+	printf("\033[0;36m"); //Set the text to the color red.
+	
+	printf("the decimal number of the given code : ");
+	
+	printf("\033[0;32m"); //Set the text to the color red.
+	
+	printf("%d",sum);
+	
+	printf("\n\n");
+	
+	
+	printf("\033[0;33m"); //Set the text to the color red.
+		
+		
+		for(int u=0;u<17;++u)
+		{
+			printf("o_o");
+		}
+	
+	printf("\n\n");
+		
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		printf("\n\n");
+	}
+	
+	else
+	{
+		printf("\33[0;31m"); //Set the text to the color red
+		printf("Error choosing a base which is not literally exsist please try again nigga ");
+		
+		
+		
+		printf("\n\n");
+		
+		printf("\33[0;37m"); //Set the text to the color white
+		printf(" Credits : Walid Araar");
+		printf("\n\n");
+		
+		int x,y,z;
+	printf("\33[0;35m"); //Set the text to the color white
+		
+	for(x=0;x<15;++x)
+	{
+		for(y=15;y>x;--y)
+		{
+			printf(" ");
+		}
+		
+		for(y=0;y<x;++y)
+		{
+			printf("*");
+		}
+		
+		for(y=0;y<x;++y)
+		{
+			printf("*");
+		}
+		
+		printf("*\n");
+			
+	}
+	
+	for(z=0;z<16;++z)
+	{
+		for(y=0;y<z;++y)
+		{
+			printf(" ");
+		}
+		
+		for(y=15;y>z;--y)
+		{
+			printf("*");
+		}
+		
+		for(y=15;y>z;--y)
+		{
+			printf("*");
+		}
+		
+		printf("*\n");
+	
+	}
+	}
+	
+	
+}
